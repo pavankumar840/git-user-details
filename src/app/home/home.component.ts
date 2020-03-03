@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   //get user data  from api and extract required data from it
   userList(pagecount: number){
     this.usersData = [];
-    this.getUsers.rawUsersData(this.pageNumber).subscribe((data: any) => {
+    this.getUsers.rawUsersData(pagecount).subscribe((data: any) => {
       for(let user of data) {
         this.getUsers.requireUserdData(user).subscribe((result: HomeInterface) =>{
           this.usersData.sort().push(result);

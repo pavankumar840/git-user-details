@@ -1,45 +1,16 @@
-<article>
-  <h2>repo namee</h2>
+<article  *ngFor="let repo of repoDetails[0]">
+  <h2>{{repo.name}}</h2>
   <div class="repo_details d-flex">
-    <span>Language: java</span>
-    <span><i class="fa fa-star"></i> 100</span>
-    <span><i class="fa fa-code-fork"></i> 100</span>
-    <span><a href="" >View Repository</a></span>
-  </div>
-  <!-- <h2>{{repo.name}}</h2>
-  <div class="d-flex">
     <span>Language: {{repo.language}}</span>
     <span><i class="fa fa-star-o"></i> {{ repo.stargazers_count }}</span>
     <span><i class="fa fa-code-fork"></i> {{ repo.forks_count }}</span>
-  </div> -->
-</article>
-<article>
-  <h2>repo namee</h2>
-  <div class="repo_details d-flex">
-    <span>Language: java</span>
-    <span><i class="fa fa-star"></i> 100</span>
-    <span><i class="fa fa-code-fork"></i> 100</span>
-    <span><a href="" >View Repository</a></span>
+    <span><a [href]="repo.html_url" >View Repository</a></span>
   </div>
-  <!-- <h2>{{repo.name}}</h2>
-  <div class="d-flex">
-    <span>Language: {{repo.language}}</span>
-    <span><i class="fa fa-star-o"></i> {{ repo.stargazers_count }}</span>
-    <span><i class="fa fa-code-fork"></i> {{ repo.forks_count }}</span>
-  </div> -->
 </article>
-<footer>
-  <button class="footer_btn bt-prev "[disabled]="isPreviousDisable" (click)="previousPage()"><i class='fas fa-angle-left'></i> Previous</button>
-  <button class="footer_btn bt-next " [disabled]="isNextDisable" (click)="nextPage()">Next <i class='fas fa-angle-right'></i></button>
-</footer>
 
-<!-- <div class="user" *ngFor="let repo of repoDetails[0]">
-  <div class="user_details">
-    <h3>{{repo.full_name}}</h3>
-    <div class="user_details_repo-follo">
-      <span>Language: {{repo.language}}</span>
-      <span>Star: {{repo.stargazers_count }}</span>
-      <span>Fork: {{repo.forks_count }}</span>
-    </div>
-  </div>
-</div> -->
+<footer>
+ <div>
+  <button class="footer_btn bt-prev" (click)="previousPage()"><i class='fas fa-angle-left'></i> Previous</button>
+  <button class="footer_btn bt-next" (click)="nextPage()">Next <i class='fas fa-angle-right'></i></button>
+ </div>
+</footer>

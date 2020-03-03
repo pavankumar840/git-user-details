@@ -11,33 +11,35 @@ import { RepoInterface } from './repository.interface';
 export class RepositoryComponent implements OnInit {
 
   public repoDetails: RepoInterface[] = []
-  pageNumber: any;
+  pageNumber: number = 1;
   isPreviousDisable: boolean = true;
   isNextDisable: boolean = false;
   totalRepos: number;
+  repoLogin: string;
+
   constructor(private route: ActivatedRoute, private router: Router, private getRepositories: GetRepositories) { }
 
   ngOnInit() {
-    let repoLogin = this.route.snapshot.paramMap.get('login');
+     this.repoLogin = this.route.snapshot.paramMap.get('login');
     // this.totalRepos = this.router.getCurrentNavigation().extras.state.repoCount;
-    this.getRepositories.getRepos(repoLogin).subscribe((result: RepoInterface) => {
+    this.getAllRepos(this.pageNumber);
+  }
+
+  getAllRepos(pageNumber: number){
+    this.repoDetails = [];
+    this.getRepositories.getRepos(this.repoLogin, pageNumber).subscribe((result: RepoInterface) => {
       this.repoDetails.push(result);
       console.log(this.repoDetails);
     })
   }
 
   previousPage(){
-    var pagecount = --this.pageNumber*30;
-    if(this.pageNumber<1){
-      this.pageNumber = 0;
-      this.isPreviousDisable = true;
-    }else
-    this.isPreviousDisable = false;
-    // this.usersData = this.getUsers.returnData(pagecount);
+    var pagecount = --this.pageNumber;
+    this.getAllRepos(pagecount);
   }
   nextPage(){
-    var pagecount = ++this.pageNumber*30;
-    // this.usersData = this.getUsers.returnData(pagecount);
+    var pagecount = ++this.pageNumber;
+    this.getAllRepos(pagecount);
   }
 
 }

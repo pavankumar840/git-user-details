@@ -30,27 +30,37 @@ main {
     &_btn {
       width: fit-content;
       float: right;
-      background: #F1795F;
+      background: #95aaca;
     }
   }
 }
 
-footer{
+footer {
   text-align: center;
-  button{
+  width: 100%;
+  position: fixed;
+  bottom: 10px;
+  button {
     width: 100px;
     margin: 10px 1px;
-    background: #F1795F;
+    background: #f1795f;
     border: 0;
     padding: 7px;
     color: #fff;
-
   }
-  .bt-prev:hover{
+  .bt-prev:hover {
     padding-right: 15px;
   }
 
-  .bt-next:hover{
+  .bt-next:hover {
     padding-left: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    .user {
+      width: 96%;
+    }
   }
 }

@@ -9,8 +9,8 @@ export class GetRepositories {
 
   constructor(private http: HttpClient){}
 
-  getRepos(login: string){
-    return this.http.get('https://api.github.com/users/'+login+'/repos');
+  getRepos(login: string, pageNo){
+    return this.http.get('https://api.github.com/users/'+login+'/repos?page='+pageNo+"&per_page=100'");
   }
 
 }
