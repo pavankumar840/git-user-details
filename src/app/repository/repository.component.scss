@@ -1,0 +1,24 @@
+@import '../../assets/scss/hoem.scss';
+
+article{
+  width: 46%;
+  margin: 2%;
+  float: left;
+  border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, red, orange);
+    border-image-slice: 1;
+.repo_details{
+  justify-content: space-between;
+  align-items: center;
+}
+}
+
+@media (max-width: 768px) {
+  article{
+    width: 100%;
+    .repo_details{
+      justify-content: space-around;
+    }
+  }
+}
+

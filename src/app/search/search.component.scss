@@ -1,0 +1,31 @@
+.search-icon{
+  position: fixed;
+  right: 15px;
+  top: 30px;
+
+  i{
+    font-size: 20px;
+    color: #000;
+    background: #aba2a261;
+    padding: 8px;
+    border-radius: 24px;
+  }
+  input{
+    width: 0;
+    display: none;
+    outline-color: lightblue;
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px;
+    ::placeholder{
+      font-size: 12px;
+    }
+  }
+  :hover{
+    input{
+      width: 200px;
+      margin: 0 5px;
+      display: unset;
+    }
+  }
+  }

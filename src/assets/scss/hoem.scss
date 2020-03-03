@@ -1,0 +1,56 @@
+main {
+  .user {
+    width: 48%;
+    float: left;
+    margin: 1%;
+    display: flex;
+    padding: 15px 15px 0 15px;
+    border-bottom: 1px solid orangered;
+    &_image {
+      img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+    &_details {
+      padding: 0 10px;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &_repo-follo {
+        width: 100%;
+        display: flex;
+        span {
+          width: 50%;
+        }
+      }
+    }
+    &_btn {
+      width: fit-content;
+      float: right;
+      background: #F1795F;
+    }
+  }
+}
+
+footer{
+  text-align: center;
+  button{
+    width: 100px;
+    margin: 10px 1px;
+    background: #F1795F;
+    border: 0;
+    padding: 7px;
+    color: #fff;
+
+  }
+  .bt-prev:hover{
+    padding-right: 15px;
+  }
+
+  .bt-next:hover{
+    padding-left: 15px;
+  }
+}
