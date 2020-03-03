@@ -1,9 +1,9 @@
 installation steps:
 
-==>clone project run "git clone <url>"
-==>inside code directory run " npm install  (or) npm i "
-==>after installation run " ng serve (or) npm start"
-==> after sucessfull compilation visit "loaclhost:4200"
+clone project run "git clone <url>"
+inside code directory run " npm install  (or) npm i " 
+after installation run " ng serve (or) npm start" 
+after sucessfull compilation visit "loaclhost:4200"
 
 WorkFlow:
 
